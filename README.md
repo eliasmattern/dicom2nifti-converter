@@ -2,6 +2,20 @@
 
 This tool converts DICOM files to NIfTI format.
 
+## Installation
+To use PsyTestPro python must be installed:
+[Download here](https://www.python.org/downloads/)
+
+There are also some dependencies that must be installed using pip:
+```shell
+# For converter:
+pip install SimpleITK
+
+# For player:
+pip install nibabel
+pip install matplotlib
+```
+
 ## How It Works
 
 The converter takes an input directory containing subdirectories of DICOM files and converts each subdirectory into a corresponding NIfTI file in the specified output directory.
