@@ -5,7 +5,7 @@ import nibabel as nib
 
 path = input('path to nifti file: ')
 
-for dirpath, dirnames, filenames in os.walk('./output'):
+for dirpath, dirnames, filenames in os.walk(path):
     for filename in filenames:
         if filename.endswith('.nii'):
             my_img = nib.load(dirpath + '/' + filename)
