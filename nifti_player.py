@@ -1,10 +1,16 @@
 import os
+import sys
 
 import matplotlib.pyplot as plt
 import nibabel as nib
 
 path = input('path to nifti file: ')
-
+images_per_seconds = input('images per second: ')
+try:
+    images_per_seconds = int(images_per_seconds)
+except ValueError as e:
+    print('Not a number: ' + images_per_seconds)
+    sys.exit()
 for dirpath, dirnames, filenames in os.walk(path):
     for filename in filenames:
         if filename.endswith('.nii'):
@@ -20,7 +26,7 @@ for dirpath, dirnames, filenames in os.walk(path):
                 for slice_Number in range(nii_data.shape[2]):
                     plt.imshow(nii_data[:, :, slice_Number])
                     plt.show(block=False)
-                    plt.pause(0.04)
+                    plt.pause(1/images_per_seconds)
                     plt.clf()
 
             if len(nii_data.shape) == 4:
@@ -28,5 +34,5 @@ for dirpath, dirnames, filenames in os.walk(path):
                     for slice_Number in range(nii_data.shape[2]):
                         plt.imshow(nii_data[:, :, slice_Number, frame])
                         plt.show(block=False)
-                        plt.pause(0.04)
+                        plt.pause(1/images_per_seconds)
                         plt.clf()

@@ -72,11 +72,12 @@ The NIfTI player allows you to visualize NIfTI files by playing them as a sequen
 ### How It Works
 
 1. The player prompts you for the path to a directory.
-2. It processes each NIfTI file found in the directory, displaying the images in sequence.
+2. Define how many picture should be shown per second.
+3. It processes each NIfTI file found in the directory, displaying the images in sequence.
 
 ### Instructions
 
-1. Run the NIfTI player and provide the path to the directory containing the NIfTI files when prompted.
+1. Run the NIfTI player and provide the path to the directory containing the NIfTI files and the images you want to see per second when prompted.
 2. The player will display each NIfTI file found in the directory, showing the images in sequence.
 
 This tool simplifies the process of converting DICOM files to the widely-used NIfTI format, making it easier to handle and analyze medical imaging data.
